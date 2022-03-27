@@ -365,8 +365,8 @@ myserver = function(input,output,session){
   
   ######## Tab 2 interactive heatmap code##############
   
-    makeInteractiveComplexHeatmap(input, output, session, ht, "ht")
-    makeInteractiveComplexHeatmap(input, output, session, ht1, "ht1")
+  makeInteractiveComplexHeatmap(input, output, session, ht, "ht")
+  makeInteractiveComplexHeatmap(input, output, session, ht1, "ht1")
     
     
     observeEvent(input$Contselect,
