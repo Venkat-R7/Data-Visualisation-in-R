@@ -415,6 +415,79 @@ myserver = function(input,output,session){
       pie(ren_energy$value, labels = ren_energy$value, col = c('light green','red','light blue','purple','yellow'), main = "Distribution of renewable consumption - E/PC (kWh)")
       legend("topleft", c('hydro_energy_per_capita','nuclear_energy_per_capita','other_renewables_energy_per_capita','solar_energy_per_capita','wind_energy_per_capita'), cex = 0.7, fill = c('light green','red','light blue','purple','yellow'))
     })
+    ###### Tab 4 interactive Scatter plot code#########################
+    
+    output$plot1 <- renderPlotly({
+      fig = energy_sub_4 %>% plot_ly(x = ~gdp_per_capita, y = ~energy_per_capita, span = ~population, color = ~continent,frame = ~year ,text = ~country, hoverinfo = "text", type = 'scatter', mode = 'markers')
+      fig
+    })
+    
+    output$plot42 <- renderPlot({
+      ene_4 = energy_sub_4 %>% dplyr::filter(country == input$cont_4)
+      ggplot(ene_4, aes(x=energy_per_capita, y = gdp_per_capita))+ geom_point()
+    })
+    
+    
+    #### Tab 1 treemap code ####
+    output$myImage <- renderImage({
+      energy_sub_1$label <- paste(energy_sub_1$country,energy_sub_1$primary_energy_consumption , sep = ", ")
+      outfile <- tempfile(fileext = '.png')
+      png(outfile, width = 400, height = 300)
+      treemap(energy_sub_1, index=c("continent","label"), vSize = "population",  vColor= "primary_energy_consumption",
+              type="value", palette = "Blues", title="Primary energy consumption (terawatt-hours)", fontsize.title = 15)
+      dev.off()
+      list(src = outfile,
+           contentType = 'image/png',
+           width = 800,
+           height = 700,
+           alt = "This is alternate text")
+    }, deleteFile = TRUE)
+    
+    output$myImage2 <- renderImage({
+      energy_sub_1$label <- paste(energy_sub_1$country,energy_sub_1$energy_per_capita , sep = ", ")
+      outfile <- tempfile(fileext = '.png')
+      png(outfile, width = 400, height = 300)
+      treemap(energy_sub_1, index=c("continent","label"), vSize = "population",  vColor= "energy_per_capita",
+              type="value", palette = "Blues", title="Energy consumption per capita (kWh)", fontsize.title = 15)
+      dev.off()
+      list(src = outfile,
+           contentType = 'image/png',
+           width = 800,
+           height = 700,
+           alt = "This is alternate text")
+    }, deleteFile = TRUE)
+    
+    
+    
+    
+    ###### Tab 5 tmap code########
+    
+    output$my_tmap = renderTmap({
+      
+      if(input$type == FALSE){
+        energy_sub_5 = energy_sub_5 %>% filter(year==input$yearselect) 
+        
+        world_data=left_join(world,energy_sub_5, by = c("name_long" = "country"))
+        
+        map_rend = tm_shape(world_data) +
+          tm_polygons("co2", palette="-Reds", contrast=.7, id="name_long", title="CO2 Emission",breaks = c(0,1,2,4,6,8,10,15,20,25,30,40,45))+
+          tm_shape(world_data) + tm_bubbles("population",col = "energy_per_capita",border.col = "black", border.alpha = .5)
+        map_rend  
+      }
+      
+      else{
+        energy_sub_5 = energy_data_5 %>% 
+          dplyr::select(iso_code,country,year,co2,continent,population,energy_per_capita) %>% 
+          filter(year==input$yearselect & continent == input$contselect) 
+        
+        world_data=left_join(world,energy_sub_5, by = c("name_long" = "country")) 
+        
+        map_rend = tm_shape(world_data) +
+          tm_polygons("co2", palette="-Reds", contrast=.7, id="name_long", title="CO2 Emission",breaks = c(0,1,2,4,6,8,10,15,20,25,30,40,45)) +
+          tm_shape(world_data) + tm_bubbles("population",col = "energy_per_capita",border.col = "black", border.alpha = .5)
+        map_rend
+      }
+    })
 
   
 
