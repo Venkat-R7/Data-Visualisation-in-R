@@ -22,7 +22,7 @@ The analysis depends on two secondary datasets: one that has per capita carbon-d
 
 **Dashboard Structure**
 
-**Dashboard - Home Screen**
+**Home Page**
 
 
 ![](Images/HomeScreen.png)
