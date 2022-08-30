@@ -19,3 +19,6 @@ Only a few variables are utilized in this visualisation, and only data from 1970
 
 **Secondary datasets**
 The analysis depends on two secondary datasets: one that has per capita carbon-dioxide emission statistics for each country during the last five decades, and the other that contains information on country and continent mapping.
+
+Dashboard - Home Screen
+![](Images/HomeScreen.png)
