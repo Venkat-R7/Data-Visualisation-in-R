@@ -56,3 +56,4 @@ The analysis depends on two secondary datasets: one that has per capita carbon-d
 
 **Tab 6**
 
+![](Images/Tab6.png)
