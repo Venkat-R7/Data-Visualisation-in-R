@@ -24,12 +24,17 @@ The analysis depends on two secondary datasets: one that has per capita carbon-d
 **Dashboard Structure**
 
 **Home Page**
+The home screen provides few interesting datapoints, in the form of info box, from the data set that the dashboard was developed upon like number of countries, total world population, CO2 emission level excreta.
 
 
 ![](Images/HomeScreen.png)
 
 **Tab 1**
-The home screen provides few interesting datapoints, in the form of info box, from the data set that the dashboard was developed upon like number of countries, total world population, CO2 emission level excreta.
+
+The potential of a country to grow is largely determined by how well it is energised, and how self-sufficient it is in terms of energizing its citizens homes, industries excreta. “A 1% increase in energy consumption increases real GDP by 0.59%”. 
+
+The first graph is an interactive scatter plot between per capita GDP and get capita energy consumption of the past five decades. The time-series representation proves the point of the dependency between the variables.
+The plot 2 is a static scatter plot visualising the same variables country-wise.
 
 ![](Images/Tab1.png)
 
