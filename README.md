@@ -1,5 +1,6 @@
 # Data-Visualisation-in-R
 Visualisation of world energy consumption dataset using R Shiny Dashboard. 
+The visualisation for this data was performed using R programming language version 4.1.1, implementing a Shiny application dashboard.
 
 
 **Introduction**
@@ -7,8 +8,6 @@ Visualisation of world energy consumption dataset using R Shiny Dashboard.
 Energy as a form is extremely significant in today's world for all human needs. Everything takes energy in some form or another, from powering our homes to moving around in automobiles. If the globe is without energy for a day, it might have disastrous consequences.
 
 The aim of this project is to look through the world's energy data and visualise the key takeaways in order to get valuable insights.
-
-The visualisation for this data was performed using R programming language version 4.1.1, implementing a Shiny application dashboard.
 
 
 **Introduction to the datasets**
@@ -30,6 +29,7 @@ The analysis depends on two secondary datasets: one that has per capita carbon-d
 ![](Images/HomeScreen.png)
 
 **Tab 1**
+The home screen provides few interesting datapoints, in the form of info box, from the data set that the dashboard was developed upon like number of countries, total world population, CO2 emission level excreta.
 
 ![](Images/Tab1.png)
 
