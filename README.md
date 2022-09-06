@@ -41,24 +41,38 @@ The plot 2 is a static scatter plot visualising the same variables country-wise.
 
 **Tab 2**
 
+Detail about the total energy consumption by different countries, this is visualised by treemaps. Treemaps are used for representing hierarchal data of multiple datapoints. It comprises of two graphs, one showing overall energy consumption of various countries and the other showing per capita energy consumption of the same countries. 
+The continent is the initial layer in the Treemap, with countries inside. The size of the square indicates the country's population, and the colour of the square symbolizes energy usage, along with a numerical figure.
+
 ![](Images/Tab2.png)
 
 
 **Tab 3**
+
+Fossil and renewable are two types of energy sources, with fossil being the most used and renewable is what the world is thriving to move towards in the future.
+Two subtabs visualised the same in a world-wide and country wise view. Heatmaps are used to represent the data, the X axis depicts the year and Y countries. The colour of the colour variation shows the energy consumption in kWh. If any region within the heatmap is selected that are is sub plotted in the next box and if any cell is selected the detail of the cell is highlighted in the next box.
 
 ![](Images/Tab3.png)
 
 
 **Tab 4**
 
+First, a scatter plot depicts the annual change in the forms of energy, followed by pie chart that explains the distribution of energy.
+
 ![](Images/Tab4.png)
 
 
 **Tab 5**
 
+The CO2 emissions are visualized in a geographical map in this section of the dashboard. The CO2 emission level is represented by the colour of the country, while the population size is shown by the size of the bubbles, which hold numerical details of population and energy per capita. The interactive mode also allows you to choose the year and specifically a specific continent.
+
+The graph implies that some parts of the world are reducing their carbon footprint at a faster rate than others, which can be linked to the adoption of renewable energy sources. CO2 emissions must be lowered in order to meet the historic Paris climate pact's core goal of "limiting global warming to well below 2°C."
+
 ![](Images/Tab5.png)
 
 
 **Tab 6**
+
+The future of energy is shifting toward renewables, with solar playing a significant part. In this page videos are embedded in the Shiny Dashboard, one of which features Elon Musk outlining the importance of solar about a decade ago, and the other of which features the world's largest solar power plant.
 
 ![](Images/Tab7.png)
